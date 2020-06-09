@@ -1,16 +1,20 @@
 ﻿using System;
 using System.Net.Http;
 using System.Threading.Tasks;
+using dotenv.net;
 using RingCentral;
 
 namespace EngageVoiceDemo
 {
+    
     class Program
     {
         public static HttpClient httpClient = new HttpClient();
         
         static void Main(string[] args)
         {
+            DotEnv.Config(false);
+            
             Task.Run(async () =>
             {
                 using (var rc = new RestClient(
